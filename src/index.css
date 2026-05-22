@@ -1,0 +1,525 @@
+:root {
+  --bg: #05070a;
+  /* Ultimate Animated-looking Mesh */
+  --bg-2: radial-gradient(at 0% 0%, rgba(13, 27, 62, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, rgba(7, 11, 20, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(112, 0, 255, 0.12) 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(0, 242, 255, 0.08) 0, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(7, 11, 20, 1) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(13, 27, 62, 1) 0, transparent 50%),
+    #05070a;
+  --panel: rgba(0, 0, 0, 0.4);
+  --glass: rgba(0, 0, 0, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  --text: #ffffff;
+  --muted: #ffffff;
+  --accent: #00f2ff;
+  --accent-2: #7000ff;
+  --accent-3: #00ff88;
+  --glass-blur: 20px;
+  --radius: 24px;
+  --max-width: 1400px;
+}
+
+/* Force White Color only on specific text elements to protect icons and accents */
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+label {
+  color: #ffffff !important;
+}
+
+/* Ensure accents and icons still work by specifically NOT overriding them if they have these classes */
+.neon-text,
+.neon-accent,
+.accent,
+.accent-2,
+.accent-3,
+.icon-style,
+.quote-icon,
+.service-col svg,
+.social-icons a,
+i,
+svg {
+  color: unset !important;
+  /* Allow inherited or specific color variables to take over */
+}
+
+/* Re-apply specific accent colors that might have been hit */
+.neon-text {
+  color: var(--accent) !important;
+}
+
+.icon-style,
+.quote-icon {
+  color: var(--accent) !important;
+}
+
+.product-price {
+  color: var(--accent-3) !important;
+}
+
+.testimonial-name {
+  color: var(--accent) !important;
+}
+
+.submit-btn {
+  color: #00121a !important;
+}
+
+.btn-primary {
+  color: #ffffff !important;
+}
+
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-2);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+p {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* Global Immersive Overlays (Grain & Grid) */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.15;
+}
+
+/* Cinematic Grain */
+body::before {
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(150%) brightness(100%);
+  mix-blend-mode: overlay;
+  z-index: 10000;
+}
+
+/* Tech Grid Pattern */
+body::after {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  color: #cbd7e6;
+}
+
+.app-root {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.container-wide {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(var(--glass-blur));
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  border: 1px solid var(--glass-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 242, 255, 0.1);
+}
+
+.neon-text {
+  color: var(--accent);
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.2);
+}
+
+.neon-accent {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  font-weight: 800;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 242, 255, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(112, 0, 255, 0.25);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  color: var(--text);
+}
+
+input,
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 12px 14px;
+  border-radius: 10px;
+  outline: none;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  box-shadow: 0 6px 30px rgba(122, 97, 255, 0.06);
+  border-color: var(--accent-2);
+}
+
+label {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
+  margin: 0 0 16px 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.row-gap {
+  gap: 18px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .app-root {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Slider / Carousel Logic - Fix Brackets */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  background-size: 50% 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 242, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 25px rgba(0, 242, 255, 0.6);
+  filter: invert(1) brightness(2);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(0, 242, 255, 0.2);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+.icon-circle {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.icon-circle:hover {
+  background: var(--accent);
+  color: #0b0f17;
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+}
+
+.icon-style {
+  color: var(--accent);
+}
+
+.quote-icon {
+  color: var(--accent);
+  filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.4));
+}
+
+.icon-box {
+  background: var(--panel);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.icon-box {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: var(--card-shadow);
+}
+
+footer .service-col svg {
+  color: var(--accent);
+}
+
+footer .social-icons a {
+  color: var(--muted);
+}
+
+/* Expert UI Features */
+.cursor-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+  filter: blur(80px);
+}
+
+.magnetic-wrap {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.stagger-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: reveal 0.8s forwards cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* NUCLEAR VISIBILITY OVERRIDE - REFINED ABSOLUTE LEGIBILITY */
+/* Target only text-bearing elements. Avoid layout elements like div/a. */
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+li,
+label,
+strong,
+b,
+u,
+i:not(.fa):not(.fab):not(.fas):not(.far) {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 1) !important;
+}
+
+/* Protected exceptions for icons and brand accents */
+.text-info {
+  color: unset !important;
+}
+
+/* Specific Accent Enforcement over global !important */
+.neon-text {
+  color: var(--accent) !important;
+}
+
+.icon-style,
+.quote-icon {
+  color: var(--accent) !important;
+}
+
+.product-price {
+  color: var(--accent-3) !important;
+}
+
+.testimonial-name {
+  color: var(--accent) !important;
+}
+
+.text-primary {
+  color: var(--accent) !important;
+}
+
+.text-success {
+  color: var(--accent-3) !important;
+}
+
+.text-danger {
+  color: #ff6b6b !important;
+}
+
+.text-warning {
+  color: #ffd93d !important;
+}
+
+.text-info {
+  color: #00f2ff !important;
+}
+
+/* Footer specific icons restoration */
+.service-col svg {
+  color: var(--accent) !important;
+}
+
+.social-icons a {
+  color: var(--muted) !important;
+}
+
+/* Global character thickness boost */
+p,
+span,
+li,
+label {
+  font-weight: 500 !important;
+}

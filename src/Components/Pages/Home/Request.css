@@ -1,0 +1,122 @@
+.request-section {
+  background: transparent;
+  padding: 80px 0;
+  color: var(--text);
+  border-top: 1px solid var(--glass-border);
+}
+
+.request-card {
+  background: var(--glass);
+  border-radius: var(--radius);
+  padding: 40px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--card-shadow);
+}
+
+.form-title {
+  font-size: 1.9rem;
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.request-form-box .form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  padding: 14px 16px;
+  border-radius: 12px;
+}
+
+.request-form-box .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.request-form-box .form-control:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #00121a;
+  border-radius: 10px;
+  font-weight: 800;
+  border: none;
+}
+
+.request-right .right-title {
+  font-size: 2rem;
+  color: var(--text);
+  font-weight: 900;
+}
+
+.request-right .right-subtitle {
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.icon-row {
+  margin-top: 24px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon-box {
+  flex: 1 1 280px;
+  /* Allows wrapping and prevents overflow */
+  max-width: 100%;
+  padding: 30px;
+  border-radius: var(--radius);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(var(--glass-blur));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-box:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.icon-style {
+  font-size: 2.6rem;
+  color: var(--accent);
+}
+
+.icon-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.icon-text {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .request-section {
+    padding: 36px 12px;
+  }
+
+  .request-card {
+    padding: 18px;
+  }
+
+  .icon-row {
+    gap: 12px;
+  }
+}

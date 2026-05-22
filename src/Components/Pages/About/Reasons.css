@@ -1,0 +1,40 @@
+.reason-box {
+  border-radius: 15px;
+  box-shadow: var(--card-shadow);
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform .25s;
+  padding: 2rem;
+}
+
+.reason-box:hover {
+  transform: translateY(-6px);
+}
+
+.reason-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.reason-box h4 {
+  color: #ffffff !important;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.reason-box p {
+  color: #ffffff !important;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+.reason-box .btn {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #001020;
+  border: none
+}

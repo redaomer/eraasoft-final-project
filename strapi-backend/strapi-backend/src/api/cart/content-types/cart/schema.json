@@ -1,0 +1,32 @@
+{
+  "collectionName": "carts",
+  "info": {
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "Cart",
+    "description": "Shopping cart items"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 1
+    },
+    "session": {
+      "type": "string"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "note": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.about-page-wrapper{ width:100%; max-width:var(--max-width); margin:0 auto; padding:80px 0; background:transparent; }
+.page-title{ text-align:center; margin-bottom:40px; }
+.page-title h1{ font-size:3.2rem; font-weight:800; color:var(--text); letter-spacing:.6px; margin:0; }
+.about-row{ display:flex; gap:48px; align-items:flex-start; justify-content:center; width:100%; }
+.left-col{ flex:0 0 auto; display:flex; align-items:flex-start; justify-content:flex-start; position:relative; padding:0; min-width:360px; }
+.about-image{ width:700px; max-width:700px; height:700px; object-fit:cover; border-radius:18px; display:block; box-shadow:var(--card-shadow); border:1px solid rgba(255,255,255,0.03); transition:transform .25s; }
+.experience-box{ position:absolute; bottom:10px; left:10px; width:240px; height:240px; background:linear-gradient(135deg, rgba(123,97,255,0.12), rgba(122,255,255,0.06)); border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; padding:12px; color:var(--text); box-shadow:var(--card-shadow); }
+@media (max-width:900px){ .about-row{ flex-direction:column; align-items:center; gap:20px; } .left-col,.right-col{ align-items:center; justify-content:center; text-align:center; padding:0; width:100%; min-width:unset; } .about-image{ width:90vw; max-width:320px; height:220px; } .experience-box{ width:110px; height:110px; left:8px; bottom:8px; } .experience-box h2{ font-size:1.7rem; } .experience-box h5,.experience-box p{ font-size:0.9rem; } .right-col button{ margin:20px auto 0 auto; display:block; padding:12px 24px; font-size:1rem; border-radius:24px; } .right-col h3,.right-col p,.right-col h5{ text-align:center; } }
+
+.right-col{
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+	padding:28px;
+	border-radius:14px;
+	border:1px solid rgba(255,255,255,0.03);
+	backdrop-filter: blur(4px);
+	box-shadow: var(--card-shadow);
+}
+
+.about-page-wrapper .page-title h1,
+.about-page-wrapper .right-col h3,
+.about-page-wrapper .right-col p,
+.about-page-wrapper .right-col h5,
+.about-page-wrapper .experience-box h2,
+.about-page-wrapper .experience-box h5{
+	color: var(--text) !important;
+}
+
+.about-page-wrapper .right-col p{ color: var(--muted) !important; }
+
+.about-page-wrapper .right-col button{
+	background: linear-gradient(90deg,var(--accent),var(--accent-2)) !important;
+	color:#001020 !important;
+	border:none !important;
+	box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
